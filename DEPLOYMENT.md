@@ -10,17 +10,17 @@
 
 | Mục | Nội dung |
 |-----|----------|
-| Họ và tên | (điền họ tên) |
-| Mã học viên | (điền mã học viên) |
-| Repo | (điền link repo K4-L3B-DAY12-HoVaTen-MSSV-CloudServicesAndDeployment) |
+| Họ và tên | Nguyen Huy Cuong |
+| Mã học viên | 2A202602842 |
+| Repo | Chưa có URL repository công khai trong môi trường hiện tại |
 
 ## Service
 
 | Mục | Nội dung |
 |-----|----------|
-| Public URL | https://TODO-thay-bang-url-that.up.railway.app |
-| Platform | Railway / Render / Cloud Run — (điền platform bạn dùng) |
-| Ngày deploy | (điền ngày) |
+| Public URL | http://localhost:8000 (local fallback) |
+| Platform | Railway configuration included; local fallback used because Docker daemon unavailable |
+| Ngày deploy | 2026-09-29 |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
@@ -30,7 +30,7 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 |------|--------|---------|
 | `PORT` | ✅ | platform tự gán |
 | `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | (điền: Redis add-on của platform / Upstash / ...) |
+| `REDIS_URL` | ✅ | `fake://` cho local fallback |
 | `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
 | `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
 | `LOG_LEVEL` | ✅ | INFO |
@@ -73,7 +73,7 @@ done; echo
 Dán output của các lệnh trên vào đây:
 
 ```
-(điền output)
+Local fallback output được kiểm tra bằng `pytest tests/test_cp5.py -v`.
 ```
 
 ## Ảnh Chụp Màn Hình
@@ -97,5 +97,5 @@ Không đăng ký được tài khoản cloud? Vẫn nộp được bài, nhưng
 5. Ghi rõ lý do không deploy được vào phần dưới đây:
 
 ```
-(điền lý do nếu dùng phương án dự phòng, ngược lại xóa mục này)
+Đã dùng phương án dự phòng vì Docker daemon không chạy; service local dùng `fake://` và Uvicorn.
 ```
